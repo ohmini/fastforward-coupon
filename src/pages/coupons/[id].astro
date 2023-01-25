@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/layout.astro'
+export function getStaticPaths() {
+  return [
+    {params: {id: "1"}, props: {product: "ยำมาม่า"}},
+    {params: {id: "2"}, props: {product: "ช็อคโกแลตปั่น"}}
+  ]
+}
+
+const {product} = Astro.props
+---
+<Layout>
+  <h1 class="text-3xl font-bold underline">
+    {product}
+  </h1>
+</Layout>
